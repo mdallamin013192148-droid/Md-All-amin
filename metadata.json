@@ -1,0 +1,8 @@
+{
+  "name": "Remix Alamin Global Earn",
+  "description": "World contact micro-tasks and freelancing earning app with instant bKash \u0026 Nagad withdrawal, 2FA security, 24/7 live support, dark mode, offline storage, and bilingual support.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

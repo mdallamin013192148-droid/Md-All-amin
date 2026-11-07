@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Alamin Global Earn</title>
+<style>
+:root{--navy:#102a43;--blue:#1769aa;--green:#15966b;--bg:#f3f7fb;--muted:#637589}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Noto Sans Bengali",sans-serif;background:var(--bg);color:#172b4d}
+header{background:linear-gradient(135deg,#102a43,#1769aa);color:white;padding:22px 18px 26px;border-radius:0 0 24px 24px}
+.brand{font-size:20px;font-weight:800}.sub{opacity:.85;font-size:13px}.balance{margin-top:22px;font-size:13px;opacity:.9}.amount{font-size:32px;font-weight:800;margin:3px 0}
+.wrap{max-width:620px;margin:auto;padding:14px}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:11px;margin-top:12px}
+.card{background:white;border-radius:16px;padding:15px;box-shadow:0 3px 14px #17324d0c}
+.tile{min-height:104px}.emoji{font-size:24px}.tile b{display:block;margin-top:7px}.muted{color:var(--muted);font-size:12px}
+h3{font-size:16px;margin:18px 2px 9px}.actions{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+button{border:0;border-radius:12px;padding:11px 12px;background:var(--blue);color:white;font-weight:700;font-size:14px;cursor:pointer}
+.actions button{background:white;color:var(--navy);border:1px solid #e1e9f0;min-height:76px}
+.full{width:100%;margin-top:10px}.green{background:var(--green)}
+input,select{width:100%;padding:12px;border:1px solid #d7e1ea;border-radius:10px;margin:6px 0 12px;font:inherit;background:white}
+label{font-size:13px;font-weight:700}section{display:none}section.active{display:block}
+.notice{background:#fff7df;border:1px solid #f0d99b;padding:12px;border-radius:12px;font-size:12px;line-height:1.5;margin-top:12px}
+.task{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:9px 0}.task button{white-space:nowrap}
+nav{position:sticky;bottom:0;background:white;display:flex;justify-content:space-around;padding:9px 2px;border-top:1px solid #e6edf3}
+nav button{background:transparent;color:#526579;padding:8px;font-size:12px}
+nav button.sel{color:var(--blue)}
+footer{text-align:center;color:#8493a3;font-size:11px;padding:18px}
+</style></head>
+<body>
+<header><div class="brand">🌍 Alamin Global Earn</div><div class="sub">বিশ্বজুড়ে কাজ করুন, আয়ের হিসাব রাখুন</div>
+<div class="balance">ডেমো ওয়ালেট ব্যালেন্স</div><div class="amount" id="balance">৳ 0.00</div><div class="sub">পরীক্ষামূলক ব্যালেন্স • বাস্তব টাকা নয়</div></header>
+<div class="wrap">
+<section id="home" class="active">
+<div class="grid">
+<div class="card tile"><div class="emoji">📝</div><b>ছোট কাজ</b><div class="muted">সহজ কাজ সম্পন্ন করুন</div></div>
+<div class="card tile"><div class="emoji">📺</div><b>বিজ্ঞাপন</b><div class="muted">অনুমোদিত বিজ্ঞাপন দেখুন</div></div>
+<div class="card tile"><div class="emoji">🤝</div><b>রেফারেল</b><div class="muted">বন্ধুকে আমন্ত্রণ জানান</div></div>
+<div class="card tile"><div class="emoji">💳</div><b>উত্তোলন</b><div class="muted">bKash / Nagad অনুরোধ</div></div>
+</div>
+<h3>দ্রুত কাজ</h3><div class="actions">
+<button onclick="show('tasks')">📝<br>কাজ</button><button onclick="show('ads')">📺<br>বিজ্ঞাপন</button><button onclick="show('refer')">🤝<br>রেফার</button>
+<button onclick="show('wallet')">💰<br>ওয়ালেট</button><button onclick="show('withdraw')">🏧<br>উত্তোলন</button><button onclick="show('profile')">👤<br>প্রোফাইল</button>
+</div>
+<div class="notice"><b>স্বচ্ছতার নোট:</b> এই Working Demo-তে কাজ/বিজ্ঞাপন/রেফারেলের পুরস্কার কেবল পরীক্ষামূলক। বাস্তব আয় চালু করতে বিজ্ঞাপন নেটওয়ার্ক, যাচাইকৃত কাজের সরবরাহকারী এবং অনুমোদিত পেমেন্ট অংশীদার যুক্ত করতে হবে।</div>
+</section>
+<section id="tasks"><h3>📝 ছোট কাজ</h3><div class="card"><div class="task"><div><b>প্রোফাইল তথ্য পূরণ</b><div class="muted">ডেমো কাজ • পুরস্কার ৳৫</div></div><button onclick="earn(5)">সম্পন্ন</button></div><hr><div class="task"><div><b>একটি জরিপের নমুনা</b><div class="muted">ডেমো কাজ • পুরস্কার ৳৮</div></div><button onclick="earn(8)">সম্পন্ন</button></div><hr><div class="task"><div><b>অ্যাপ পরিচিতি পড়ুন</b><div class="muted">ডেমো কাজ • পুরস্কার ৳২</div></div><button onclick="earn(2)">সম্পন্ন</button></div></div></section>
+<section id="ads"><h3>📺 বিজ্ঞাপন</h3><div class="card"><b>বিজ্ঞাপন দেখার ডেমো</b><p class="muted">এখানে বাস্তব বিজ্ঞাপন যুক্ত করা নেই। বিজ্ঞাপন নেটওয়ার্কের অনুমোদন ও বিজ্ঞাপন দেখানোর SDK যুক্ত হলে এই অংশ চালু হবে।</p><button class="green" onclick="alert('এটি শুধু UI ডেমো। বাস্তব বিজ্ঞাপন এখনো সংযুক্ত নয়।')">ডেমো বিজ্ঞাপন</button></div></section>
+<section id="refer"><h3>🤝 রেফারেল</h3><div class="card"><b>আপনার আমন্ত্রণ কোড</b><input id="code" value="ALAMIN-DEMO" readonly><button onclick="copyCode()">কপি করুন</button><p class="muted">বাস্তব রেফারেল কমিশন চালুর আগে প্রতারণা-রোধ, যোগ্যতা ও পেমেন্ট নীতি নির্ধারণ করতে হবে।</p></div></section>
+<section id="wallet"><h3>💰 লেনদেন</h3><div class="card"><b>বর্তমান ডেমো ব্যালেন্স: <span id="walletbal">৳ 0.00</span></b><p class="muted">এটি ডিভাইসে চলা নমুনা হিসাব; সার্ভার বা ব্যাংক/মোবাইল ওয়ালেটের সঙ্গে সংযুক্ত নয়।</p><div id="history" class="muted">এখনো কোনো ডেমো লেনদেন নেই।</div></div></section>
+<section id="withdraw"><h3>🏧 টাকা উত্তোলনের অনুরোধ</h3><div class="card"><label>পেমেন্ট মাধ্যম</label><select id="method"><option>bKash</option><option>Nagad</option></select><label>মোবাইল নম্বর</label><input id="number" placeholder="01XXXXXXXXX" inputmode="numeric"><label>পরিমাণ (৳)</label><input id="withdrawAmount" type="number" min="50" placeholder="সর্বনিম্ন ৫০"><button class="full green" onclick="requestWithdraw()">ডেমো উত্তোলন অনুরোধ</button><p class="muted">অনুরোধটি শুধু এই ডেমোতে দেখানো হবে। কোনো টাকা পাঠানো হবে না।</p><div id="withdrawMsg"></div></div></section>
+<section id="profile"><h3>👤 প্রোফাইল</h3><div class="card"><label>আপনার নাম</label><input placeholder="নাম লিখুন"><label>দেশ</label><select><option>বাংলাদেশ</option><option>অন্যান্য দেশ</option></select><label>ইমেইল</label><input type="email" placeholder="name@example.com"><button class="full" onclick="alert('ডেমো: প্রোফাইল সংরক্ষণের সার্ভার এখনো যুক্ত নয়।')">প্রোফাইল সংরক্ষণ</button></div></section>
+</div>
+<nav><button class="sel" onclick="show('home',this)">🏠<br>হোম</button><button onclick="show('tasks',this)">📝<br>কাজ</button><button onclick="show('wallet',this)">💰<br>ওয়ালেট</button><button onclick="show('profile',this)">👤<br>আমি</button></nav>
+<footer>Alamin Global Earn • Prototype v1.0 • বাস্তব পেমেন্ট চালু নয়</footer>
+<script>
+let bal=0, entries=[];
+function fmt(){document.getElementById('balance').textContent='৳ '+bal.toFixed(2);document.getElementById('walletbal').textContent='৳ '+bal.toFixed(2)}
+function show(id,btn){document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('nav button').forEach(b=>b.classList.remove('sel'));if(btn)btn.classList.add('sel');}
+function earn(n){bal+=n;entries.unshift('ডেমো পুরস্কার +৳'+n);document.getElementById('history').innerHTML=entries.map(x=>'• '+x).join('<br>');fmt();alert('ডেমো হিসেবে ৳'+n+' যোগ হয়েছে। এটি বাস্তব টাকা নয়।')}
+function copyCode(){let x=document.getElementById('code');x.select();document.execCommand('copy');alert('কোড কপি হয়েছে।')}
+function requestWithdraw(){let m=document.getElementById('method').value,n=document.getElementById('number').value,a=Number(document.getElementById('withdrawAmount').value);let out=document.getElementById('withdrawMsg');if(!/^01\d{9}$/.test(n)||a<50||!Number.isFinite(a)){out.textContent='সঠিক বাংলাদেশি মোবাইল নম্বর ও কমপক্ষে ৳৫০ লিখুন।';return}if(a>bal){out.textContent='ডেমো ব্যালেন্স যথেষ্ট নয়।';return}bal-=a;entries.unshift('ডেমো উত্তোলন অনুরোধ −৳'+a+' ('+m+')');document.getElementById('history').innerHTML=entries.map(x=>'• '+x).join('<br>');fmt();out.textContent='ডেমো অনুরোধ তৈরি হয়েছে। কোনো বাস্তব পেমেন্ট পাঠানো হয়নি।';}
+</script></body></html>
